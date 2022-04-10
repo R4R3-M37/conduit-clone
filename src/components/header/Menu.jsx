@@ -50,7 +50,6 @@ const Menu = ({ active, setActive, currentUserState }) => {
 											transform: 'translate(-50%,-50%)',
 											position: 'absolute',
 											top: '80%',
-											left: '50%',
 										}}
 									/>
 								</Link>

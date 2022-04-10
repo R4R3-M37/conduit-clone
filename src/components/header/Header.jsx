@@ -54,15 +54,14 @@ const Header = () => {
 									<li className='nav-item'>
 										<NavLink
 											to={`/profiles/${currentUserState.currentUser.username}`}
-											className='nav-link nav-link-item'
-										>
+											className='nav-link nav-link-item'>
 											{currentUserState.currentUser.username}
 											<span className='material-icons nav-link'>account_circle</span>
 										</NavLink>
 										<NavLink to='/'>
 											<img
 												className='nav-link'
-												style={{ width: '18%' }}
+												style={{ width: '45%' }}
 												src={currentUserState.currentUser.image}
 												alt='Profile pic'
 											/>

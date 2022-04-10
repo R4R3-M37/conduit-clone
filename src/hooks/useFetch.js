@@ -10,7 +10,7 @@ const useFetch = (url) => {
 	const [options, setOptions] = useState({})
 	const [token] = useStorage('token')
 
-	const doFetch = useCallback((options) => {
+	const doFetch = useCallback(() => {
 		setOptions(options)
 		setIsLoading(true)
 	}, [])

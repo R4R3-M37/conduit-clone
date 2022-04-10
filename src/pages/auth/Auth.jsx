@@ -22,7 +22,7 @@ const Auth = () => {
 	const pageDesc = isLogin ? 'Need an account?' : 'Have an account?'
 	const pageLink = isLogin ? '/register' : '/login'
 
-	const apiUrl = isLogin ? '/users/login' : '/users'
+	const apiUrl = isLogin ? '/api/users/login' : '/api/users'
 	const [{ isLoading, response, error }, doFetch] = useFetch(apiUrl)
 
 	const handleSubmit = (e) => {

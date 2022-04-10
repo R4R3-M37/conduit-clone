@@ -229,3 +229,13 @@ a.nav-link.nav-link-item.active {
     align-items: center;
     display: flex;
 }
+
+@media screen and (max-width: 327px) {
+    .nav-pills {
+        justify-content: center;
+    }
+}
+
+h1, .h1 {
+    font-size: 2.5rem !important;
+}

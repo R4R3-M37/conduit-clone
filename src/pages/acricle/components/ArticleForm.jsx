@@ -86,9 +86,9 @@ const ArticleForm = ({ onSubmit, error, initialValue, slug }) => {
 									justifyContent: 'space-between',
 									flexDirection: 'row-reverse',
 								}}>
-									<button className='btn btn-lg pull-xs-right btn-primary'>Publish article</button>
+									<button className='btn btn pull-xs-right btn-primary'>Publish article</button>
 									<Link to={slug ? `/articles/${slug}` : '/'}
-									      className='btn btn-lg pull-xs-left btn-danger'>Go
+									      className='btn btn pull-xs-left btn-danger'>Go
 										back</Link>
 								</fieldset>
 							</fieldset>

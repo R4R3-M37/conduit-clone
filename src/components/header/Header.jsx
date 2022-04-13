@@ -70,7 +70,7 @@ const Header = () => {
 											{currentUserState.currentUser.username}
 											<img
 												className='nav-link'
-												style={{ width: '25%', borderRadius: '30px' }}
+												style={{ width: '70px', height: '65px', borderRadius: '30px' }}
 												src={currentUserState.currentUser.image}
 												alt='Profile pic'
 											/>

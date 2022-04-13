@@ -47,19 +47,6 @@ const Menu = ({ active, setActive, currentUserState }) => {
 									<span className='material-icons'>account_circle</span>
 								</Link>
 							</li>
-							<li onClick={() => setActive(false)}>
-								<Link to={`/profiles/${currentUserState.currentUser.username}`}>
-									<img
-										src={currentUserState.currentUser.image}
-										alt='Profile pic'
-										style={{
-											transform: 'translate(-50%,-50%)',
-											position: 'absolute',
-											top: '80%',
-										}}
-									/>
-								</Link>
-							</li>
 						</Fragment>
 					)}
 				</ul>

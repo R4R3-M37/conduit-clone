@@ -29,7 +29,7 @@ const Comments = () => {
 				<div>
 					<FormComment slug={slug} />
 				</div>
-				{response.comments.map((comment, index) => (
+				{response && response.comments.map((comment, index) => (
 					<div className='card' key={index}>
 						<div className='card-block'><p className='card-text'>{comment.body}</p></div>
 						<div className='card-footer'>

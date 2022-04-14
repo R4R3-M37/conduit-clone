@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Link, NavLink, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import useFetch from '../../hooks/useFetch'
 import UserArticle from './components/UserArticle'
 
@@ -37,13 +37,13 @@ const Profile = () => {
 						<div className='articles-toggler'>
 							<ul className='nav nav-pills outline-active'>
 								<li className='nav-item'>
-									<NavLink end className='feed-link' to={`/profiles/${response.profile.username}`}>My
-										Posts</NavLink>
+									<Link className='feed-link active'
+									      to={`/profiles/${response.profile.username}`}>Posts</Link>
 								</li>
 								<li className='nav-item'>
-									<NavLink className='feed-link'
-									         to={`/profiles/${response.profile.username}/favorites`}>Favorites
-										Posts</NavLink>
+									<Link className='feed-link'
+									      to={`/profiles/${response.profile.username}/favorites`}>Favorites
+										Posts</Link>
 								</li>
 							</ul>
 						</div>

@@ -39,7 +39,6 @@ const EditArticle = () => {
 			body: fetchArticleResponse.article.body,
 			tagList: fetchArticleResponse.article.tagList,
 		})
-		console.log(fetchArticleResponse.article.tagList)
 	}, [fetchArticleResponse])
 
 	useEffect(() => {

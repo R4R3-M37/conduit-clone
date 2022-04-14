@@ -1,7 +1,7 @@
 import React from 'react'
 import useFetch from '../../../hooks/useFetch'
 
-const AddToFavorite = ({ isFavorited, favoritesCount, articleSlug }) => {
+const AddToFavorite = ({ isFavorited, favoritesCount, articleSlug, body }) => {
 	const apiUrl = `/articles/${articleSlug}/favorite`
 	const [{ response }, doFetch] = useFetch(apiUrl)
 	const responseCount = response ? response.article.favoritesCount : favoritesCount
@@ -14,13 +14,13 @@ const AddToFavorite = ({ isFavorited, favoritesCount, articleSlug }) => {
 	}
 
 	return (
-		<div>
-			<button className={`btn btn-sm ${isFavoritedResponse ? 'btn-primary' : 'btn-outline-primary'}`}
-			        onClick={handleLike}>
-				<i className='ion-heart' />
-				<span> {responseCount}</span>
-			</button>
-		</div>
+
+		<button className={`btn btn-sm ${isFavoritedResponse ? 'btn-primary' : 'btn-outline-primary'}`}
+		        onClick={handleLike}>
+			<i className='ion-heart' />
+			<span> {responseCount}{body && (body)}</span>
+		</button>
+		
 	)
 }
 

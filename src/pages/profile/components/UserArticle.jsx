@@ -13,7 +13,6 @@ const UserArticle = () => {
 	if (!response) {
 		return null
 	}
-	console.log(response)
 	return (
 		<Feed articles={response.articles} />
 	)

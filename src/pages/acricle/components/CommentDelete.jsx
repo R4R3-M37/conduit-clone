@@ -10,6 +10,10 @@ const CommentDelete = ({ slug, id }) => {
 		})
 	}
 
+	if (response.isLoading || response === null) {
+		setTimeout(() => document.location.reload(), 1000)
+	}
+
 	return (
 		<i className='ion-trash-a' onClick={handleDelete} />
 	)

@@ -47,7 +47,8 @@ const Profile = () => {
 								</li>
 							</ul>
 						</div>
-						<UserArticle />
+						{response ? <UserArticle /> :
+							<div className='container text-center'>No articles are here... yet.</div>}
 					</div>
 				</div>
 			</div>

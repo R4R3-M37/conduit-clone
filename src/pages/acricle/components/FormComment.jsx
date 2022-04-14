@@ -1,17 +1,12 @@
 import React, { useContext, useState } from 'react'
 import useFetch from '../../../hooks/useFetch'
 import { CurrentUserContext } from '../../../context/currentUser'
-import { useNavigate } from 'react-router-dom'
 
 const FormComment = ({ slug }) => {
-	const navigate = useNavigate()
 	const apiUrl = `/articles/${slug}/comments`
 	const [currentUserState] = useContext(CurrentUserContext)
 	const [response, doFetch] = useFetch(apiUrl)
-	const [isSubmitted, setIsSubmitted] = useState(false)
 	const [comment, setComment] = useState('')
-
-	console.log(response)
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
@@ -26,7 +21,7 @@ const FormComment = ({ slug }) => {
 	}
 
 	if (response.isLoading || response === null) {
-		document.location.reload()
+		setTimeout(() => document.location.reload(), 1000)
 	}
 
 	return (
@@ -39,7 +34,8 @@ const FormComment = ({ slug }) => {
 				</div>
 				<div className='card-footer'>
 					<img className='comment-author-img'
-					     src={currentUserState.currentUser.image} alt='profile pic' />
+					     src={currentUserState.currentUser && currentUserState.currentUser.username ? currentUserState.currentUser.image : 'https://api.realworld.io/images/smiley-cyrus.jpeg'}
+					     alt='profile pic' />
 					<button className='btn btn-sm btn-primary' type='submit'> Post Comment
 					</button>
 				</div>

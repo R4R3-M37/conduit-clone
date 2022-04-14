@@ -29,7 +29,7 @@ const Comments = () => {
 				<div>
 					<FormComment slug={slug} />
 				</div>
-				{response && response.comments.map((comment, index) => (
+				{response.comments.map((comment, index) => (
 					<div className='card' key={index}>
 						<div className='card-block'><p className='card-text'>{comment.body}</p></div>
 						<div className='card-footer'>
@@ -38,9 +38,9 @@ const Comments = () => {
 							</Link>
 							<Link className='comment-author'
 							      to={`/profiles/${comment.author.username}`}
-							      style={{ marginLeft: '10px' }}> {comment.author.username} </Link>
+							      style={{ marginLeft: '10px' }}>{comment.author.username}</Link>
 							<span className='date-posted'>{getDate(comment.createdAt)}</span>
-							{comment.author.username === currentUserState.currentUser.username && (
+							{currentUserState.currentUser && currentUserState.currentUser.username && comment.author.username === currentUserState.currentUser.username && (
 								<span className='mod-options'><CommentDelete slug={slug} id={comment.id} /></span>
 							)}
 						</div>

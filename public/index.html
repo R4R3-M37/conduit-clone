@@ -17,6 +17,24 @@
 	<link href='//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
 	<link rel='stylesheet' href='../src/assets/main.css'>
+	<script type='text/javascript'>
+		function MyCopyText() {
+			var target_text = window.getSelection(),
+				add_text = '<br><br> Источник: ' + document.location.href,
+				out_text = target_text + add_text,
+				fake = document.createElement('div')
+			fake.style.position = 'absolute'
+			fake.style.left = '-99999px'
+			document.body.appendChild(fake)
+			fake.innerHTML = out_text
+			target_text.selectAllChildren(fake)
+			window.setTimeout(function() {
+				document.body.removeChild(fake)
+			}, 100)
+		}
+
+		document.addEventListener('copy', MyCopyText)
+	</script>
 </head>
 <body>
 <noscript>You need to enable JavaScript to run this app.</noscript>
